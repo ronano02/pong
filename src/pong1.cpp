@@ -9,15 +9,24 @@ GameController::~GameController() {}
 void GameController::draw()
 {
     std::system("CLS");
-    for (int y = 0; y < mHeight; y++) {
-        for (int x = 0; x < mWidth; x++) {
-            if (x == 0) {
+    for (int y = 0; y < mHeight; y++)
+    {
+        for (int x = 0; x < mWidth; x++)
+        {
+            if (x == 0)
+            {
                 std::cout << "\xDB";
-            } else if (x == mWidth - 1) {
+            }
+            else if (x == mWidth - 1)
+            {
                 std::cout << "\xDB\n";
-            } else if (y == 0 || y == mHeight - 1) {
+            }
+            else if (y == 0 || y == mHeight - 1)
+            {
                 std::cout << "\xDB";
-            } else {
+            }
+            else
+            {
                 std::cout << " ";
             }
         }
