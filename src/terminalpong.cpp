@@ -1,8 +1,8 @@
 #include "terminalpong.hpp"
 
-//----------------------------------------------------------------
+//------------------------------------------------------------------------------
 // Ball Functions
-//----------------------------------------------------------------
+//------------------------------------------------------------------------------
 
 Ball::Ball(int x, int y) : mX(x), mY(y), mOriginalX(x), 
                            mOriginalY(y), mDirection(STOP) {}
@@ -55,14 +55,31 @@ void Ball::reset() {
 }
 
 std::ostream& operator<<(std::ostream& os, Ball ball) {
-    os << "Ball Position: [" << ball.mX << "," << ball.mY << "]\n" << 
+    os << "Ball Position: [" << ball.mX << ", " << ball.mY << "]\n" << 
           "Ball Direction: [" << ball.mDirection << "]\n";
     return os;
 }
 
+//------------------------------------------------------------------------------
+// Paddle Functions
+//------------------------------------------------------------------------------
+
+Paddle::Paddle(int x, int y) : mX(x), mY(y), mOriginalX(x), mOriginalY(y) {}
+
+Paddle::~Paddle() {}
+
+void Paddle::reset() {
+    mX = mOriginalX;
+    mY = mOriginalY;
+}
+
+std::ostream& operator<<(std::ostream& os, Paddle paddle) {
+    os << "Paddle Position: [" << paddle.mX << ", " << paddle.mY << "]\n";
+    return os;
+}
 
 
-
+//------------------------------------------------------------------------------
 
 int main() {
     return 0;
