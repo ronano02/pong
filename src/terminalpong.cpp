@@ -9,7 +9,9 @@ Ball::Ball(int x, int y) : mX(x), mY(y), mOriginalX(x),
 
 Ball::~Ball() {}
 
-void Ball::setDirection(eCompassDirection direction) : mDirection(direction) {}
+void Ball::setDirection(eCompassDirection direction) {
+    mDirection = direction;
+}
 
 void Ball::randomiseDirection() {
     setDirection((eCompassDirection)((rand() % 6) + 1));
@@ -46,8 +48,13 @@ void Ball::move() {
     }
 }
 
-void Ball::reset() : mX(mOriginalX), mY(mOriginalY), mDirection(STOP) {}
+void Ball::reset() {
+    mX = mOriginalX;
+    mY = mOriginalY;
+    mDirection = STOP;
+}
 
 std::ostream& operator<<(std::ostream& os, Ball ball) {
     os << "Ball Position: [" << ball.mX << "," << ball.mY << "]\n Ball Direction: [" << ball.mDirection << "]\n";
+    return os;
 }
