@@ -58,3 +58,11 @@ std::ostream& operator<<(std::ostream& os, Ball ball) {
     os << "Ball Position: [" << ball.mX << "," << ball.mY << "]\n Ball Direction: [" << ball.mDirection << "]\n";
     return os;
 }
+
+
+
+
+
+int main() {
+    return 0;
+}
