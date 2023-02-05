@@ -44,7 +44,7 @@ void Ball::move() {
             mY++;
             break;
         default:
-            std::cout << "An error occured while executing the move function" << std::endl;
+            std::cout << "Error: Invalid direction in Ball.move()" << std::endl;
     }
 }
 
@@ -55,7 +55,8 @@ void Ball::reset() {
 }
 
 std::ostream& operator<<(std::ostream& os, Ball ball) {
-    os << "Ball Position: [" << ball.mX << "," << ball.mY << "]\n Ball Direction: [" << ball.mDirection << "]\n";
+    os << "Ball Position: [" << ball.mX << "," << ball.mY << "]\n" << 
+          "Ball Direction: [" << ball.mDirection << "]\n";
     return os;
 }
 
