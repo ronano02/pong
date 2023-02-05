@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cmath>
+#include <conio.h>
 #include <iostream>
 #include <time.h>
 #include <utility>
@@ -50,16 +51,10 @@ public:
     void randomiseDirection();
 
     /**
-     * @brief Gets the current x position of the ball
-     * @return int x position
+     * @brief Gets the current position of the ball
+     * @return pair {x, y} position
      */
-    inline int getXPos() { return mX; }
-
-    /**
-     * @brief Gets the current y position of the ball
-     * @return int y position
-     */
-    inline int getYPos() { return mY; }
+    inline std::pair<int, int> getPos() { return {mX, mY}; }
 
     /**
      * @brief Gets the current direction of the ball
@@ -114,16 +109,10 @@ public:
     ~Paddle();
 
     /**
-     * @brief Gets the current x position of the paddle
-     * @return int x position
+     * @brief Gets the current position of the paddle
+     * @return pair {x, y} position
      */
-    inline int getXPos() { return mX; }
-
-    /**
-     * @brief Gets the current y position of the paddle
-     * @return int y position
-     */
-    inline int getYPos() { return mY; }
+    inline std::pair<int, int> getPos() { return {mX, mY}; }
 
     /**
      * @brief Moves the paddle up
@@ -176,13 +165,6 @@ public:
     ~Controller();
 
     /**
-     * @brief Adds one point to a given players score
-     * @param Paddle*player - pointer to the player
-     * @return none
-     */
-    void addPoint(Paddle *player);
-
-    /**
      * @brief Prints the game (map, paddles, ball, etc...) to the screen
      * @return none
      */
@@ -207,6 +189,12 @@ public:
      */
     void run();
 
+    /**
+     * @brief Resets the map, including all positions of the ball and players
+     * @return none
+     */
+    void reset();
+
 private:
     int mHeight;
     int mWidth;
@@ -217,8 +205,4 @@ private:
 
     Paddle *playerA;
     Paddle *playerB;
-    char upA = 'w';
-    char downA = 's';
-    char upB = 'i';
-    char downB = 'k';
 };
